@@ -1,0 +1,139 @@
+<template>
+    <div>
+        <lightning-button label="Scan Barcode" onclick={handleScan}></lightning-button>
+        <div class="slds-grid slds-grid_vertical">
+            <div class=" slds-box slds-col slds-m-top_medium">
+                <video class="slds-hide" width="300" height="230"></video>
+                <canvas class="slds-hide" width="300" height="230"></canvas>
+            </div>
+            
+        </div>
+        <div class=" slds-box slds-col slds-m-top_medium">
+            <p>Barcode Result: {barcodeResult}</p>
+        </div>
+        
+    </div>
+</template>
+
+<!--template>
+
+    //// DIFFERENT STYLES AND HTML MARKUPS SOME MAY NOT FUNCTION PROPERLY
+    <div>
+        <video></video>
+        <canvas></canvas>
+        <div if:true={barcodeResult}>Barcode result: {barcodeResult}</div>
+        <button onclick={handleScan}>Scan Barcode</button>
+    </div>
+</template-->
+
+
+<!--template>
+    <div class="slds-box slds-box_x-small slds-align_absolute-center">
+        <div class="slds-box slds-box_x-small ">
+            <video id="barcode-video" class="slds-var-m-vertical_large slds-var-p-vertical_medium 
+            slds-text-align_center slds-border_top slds-border_bottom"></video>
+            <video id="barcode-video-mobile" class=""></video>
+            <canvas class="slds-hide"></canvas>
+        </div>
+        <template if:true={barcodeResult}>
+            <div class="slds-text-heading_small slds-m-top_small">Barcode result: {barcodeResult}</div>
+        </template>
+        <div class="slds-m-top_small">
+            <lightning-button label="Scan Barcode" onclick={handleScan}></lightning-button>
+        </div>
+    </div>
+</template-->
+
+
+<!--template>
+    <div class="slds-box slds-box_small slds-align_absolute-center">
+      <div class="slds-box slds-box_xx-small slds-align_absolute-center">
+        <video id="barcode-video" class="slds-size_full slds-hide_medium slds-hide_small" playsinline style="object-fit: cover; object-position: center; aspect-ratio: 1/1;"></video>
+        <video id="barcode-video-mobile" class="slds-size_full slds-hide_large" playsinline style="object-fit: cover; object-position: center; aspect-ratio: 1/1;"></video>
+        <canvas class="slds-hide"></canvas>
+      </div>
+      <template if:true={barcodeResult}>
+        <div class="slds-text-heading_small slds-m-top_medium">Barcode result: {barcodeResult}</div>
+      </template>
+      <div class="slds-m-top_medium">
+        <lightning-button label="Scan Barcode" onclick={handleScan}></lightning-button>
+      </div>
+    </div>
+  </template-->
+
+  <!--template>
+    <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+        <div class="slds-box slds-box_small slds-align_absolute-center">
+            <div class="slds-p-around_medium slds-box slds-align_absolute-center">
+                
+                <video id="barcode-video" class="slds-size_full slds-hide_medium slds-hide_small" playsinline style=" margin-left:10%; max-width: 70%; max-height: 50%; width: 70%; height: 50%; ; display: block; object-fit: cover; object-position: center; aspect-ratio: 4/3"></video>
+                <video id="barcode-video-mobile" class="slds-size_full slds-hide_large" playsinline style="margin-left:10%; max-width: 70%; max-height: 50%; width: 70%; height: 50%; display: block; object-fit: cover; object-position: center; aspect-ratio: 4/3;"></video>
+              <canvas class="slds-hide"></canvas>
+            </div>
+            <template if:true={barcodeResult}>
+              <div class="slds-text-heading_small slds-m-top_medium">Barcode result: {barcodeResult}</div>
+            </template>
+            <div class="slds-m-top_medium">
+              <lightning-button label="Scan Barcode" onclick={handleScan}></lightning-button>
+            </div>
+          </div>
+    </div>
+    
+  </template-->
+
+    <!--template>
+    <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+      <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_large">
+        <div class="slds-p-around_medium slds-box">
+          <div style="position: relative; height: 0; overflow: hidden; padding-bottom: 100%;">
+            <video id="video" style="position: absolute; top: 0; left: 0; width: 100%; height: 70%; object-fit: cover;"></video>
+          </div>
+          <div class="slds-p-top_medium">
+            <lightning-button label="Scan Barcode" style="color:black" onclick={handleScan} class="slds-button"></lightning-button>
+          </div>
+        </div>
+        <div class="slds-p-around_medium slds-box">
+          <template if:true={barcodeResult}>
+            <div class="slds-text-heading_medium slds-m-bottom_small">Scanned Barcode:</div>
+            <div class="slds-text-heading_small">{barcodeResult}</div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </template-->
+
+  
+  
+  <!--template>
+    <div class="slds-grid slds-grid_vertical slds-align_absolute-center">
+      <div class="slds-box slds-box_small slds-align_absolute-center">
+        <div class="slds-col slds-p-around_medium slds-box slds-align_absolute-center">
+          <video
+            id="barcode-video"
+            class="slds-size_full slds-hide_medium slds-hide_small"
+            playsinline
+            style=" margin-left:10%; max-width: 70%; max-height: 50%; width: 70%; height: 50%; ; display: block; object-fit: cover; object-position: center; aspect-ratio: 4/3"
+          ></video>
+          <video
+            id="barcode-video-mobile"
+            class="slds-size_full slds-hide_large"
+            playsinline
+            style="margin-left:10%; max-width: 70%; max-height: 50%; width: 70%; height: 50%; display: block; object-fit: cover; object-position: center; aspect-ratio: 4/3;"
+          ></video>
+          <canvas class="slds-hide"></canvas>
+        </div>
+        <div class="slds-grid slds-grid_vertical">
+            <template if:true={barcodeResult}>
+                <div class="slds-col slds-text-heading_small slds-m-top_medium">
+                  Barcode result: {barcodeResult}
+                </div>
+              </template>
+              <div class=" slds-col slds-m-top_medium">
+                <lightning-button label="Scan Barcode" onclick={handleScan}></lightning-button>
+              </div>
+        </div>
+        
+      </div>
+    </div>
+  </template-->
+  
